@@ -91,7 +91,18 @@ $abo1->calculerCout(2); // 2 fois 30 pour 2 mois d'abonnement
 
 class AbonnementPremium extends Abonnement {
 
-    private $reduction;
+    private $reduction; // reduc sur le prix mensuel 
+    public function __construct($utilisateur, $prixMensuel, DateTime $dateDebut, $reduction)
+    {
+     parent::__construct($utilisateur, $prixMensuel, $dateDebut);
+        $this->reduction = $reduction; 
+    }
+    public function getterReduction() {
+        return $this->reduction;
+    }
+        public function setterReduction($reduction) {
+            $this->reduction = $reduction;
+        }
 }
 
 
